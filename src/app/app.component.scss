@@ -1,0 +1,39 @@
+// .btn {
+//   background-color: #007bff; /* Set the background color */
+//   border: none;
+//   padding: 0;
+// }
+
+// .btn a {
+//   display: inline-block;
+//   padding: 0.5rem 1rem;
+//   text-decoration: none;
+//   color: #fff; /* Set the text color to white */
+// }
+
+// .btn a:hover {
+//   background-color: #0056b3; /* Darken the background color on hover */
+// }
+
+
+.btn-add-user {
+
+  background-color: #28a745; /* Green color */
+  color: #fff; /* White text color */
+  border: none;
+  margin-left: 50px;
+  padding: 0.375rem 0.75rem; /* Adjust padding as needed */
+  border-radius: 0.25rem; /* Adjust border radius as needed */
+  font-size: 0.875rem; /* Adjust font size as needed */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition effect */
+
+  &:hover {
+    background-color: #218838; /* Darker green color on hover */
+  }
+
+  &:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5); /* Add focus shadow */
+  }
+}

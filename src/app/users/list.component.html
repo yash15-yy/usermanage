@@ -1,0 +1,45 @@
+
+<h1 style="margin-top: 20px; margin-left: 20px; "><b>Users List</b></h1>
+
+<!-- <a routerLink="add" class="btn btn-sm btn-success mb-2 btn-add-user">Add User</a>
+<p></p> -->
+<p style="margin-left:20px;"><b>>>  Working on sorting by click on Name or Email</b></p>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th style="width: 60%" (click)="sortTable('firstName')">Name <input type="text" [(ngModel)]="searchTerm" class="form-control mb-4" placeholder="Search by name"></th>
+      <th style="width: 30%" (click)="sortTable('email')">Email</th>
+      <th style="width: 30%">Role</th>
+      <th style="width: 20%">Button</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Filter users based on the search term -->
+    <tr *ngFor="let user of users | filterUsers:searchTerm">
+      <td>{{user.firstName}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.role}}</td>
+      <td style="white-space: nowrap">
+        <button (click)="deleteUser(user.id)" class="btn btn-sm btn-danger btn-delete-user">
+          <a routerLink="edit/{{user.id}}" class="btn btn-sm btn-primary mr-1">Edit</a>
+        </button>
+        <button (click)="deleteUser(user.id)" class="btn btn-sm btn-danger btn-delete-user" [disabled]="user.isDeleting">
+          <span *ngIf="user.isDeleting" class="spinner-border spinner-border-sm"></span>
+          <span *ngIf="!user.isDeleting">Delete</span>
+        </button>
+        <!-- <button (click)="openConfirmationDialog(user.id)" class="btn btn-sm btn-danger btn-delete-user">
+          Delete
+        </button> -->
+        <!-- <button (click)="openConfirmationDialog(user.id)" class="btn btn-sm btn-danger btn-delete-user">
+          <span *ngIf="user.isDeleting" class="spinner-border spinner-border-sm"></span>
+          <span *ngIf="!user.isDeleting">Delete</span>
+        </button> -->
+      </td>
+    </tr>
+    <tr *ngIf="!users">
+      <td colspan="4" class="text-center">
+        <span class="spinner-border spinner-border-lg align-center"></span>
+      </td>
+    </tr>
+  </tbody>
+</table>

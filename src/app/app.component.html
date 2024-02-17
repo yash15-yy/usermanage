@@ -1,0 +1,22 @@
+<!-- nav -->
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+  <div class="navbar-nav"  style="margin-top: 20px;">
+
+    <a routerLink="/users" class="btn btn-sm btn-success mb-2 btn-add-user">User List</a>
+
+    <a routerLink="/users/add" class="btn btn-sm btn-success mb-2 btn-add-user">Add User</a>
+
+    <!-- <button class="btn" style="margin:10px;">
+      <a class="nav-item nav-link" routerLink="/users" routerLinkActive="active">Users List</a>
+    </button>
+    <button class="btn" style="margin:10px;">
+      <a class="nav-item nav-link" routerLink="users/add" routerLinkActive="active">Add User</a>
+    </button> -->
+  </div>
+</nav>
+
+<!-- main app container -->
+<div class="app-container bg-light">
+  <alert></alert>
+  <router-outlet></router-outlet>
+</div>
